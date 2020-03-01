@@ -97,6 +97,9 @@ test_stage () {
 total_summary () {
     echo "===================TOTAL SUMMARY===================="
     printf "%d successes, %d failures\n" $success_total $failure_total
+	if [ $failure_total != 0 ] ; then
+		exit 1;
+	fi
 }
 
 if [ "$1" == "" -o "$1" == "--help" ]; then
