@@ -133,7 +133,7 @@ total_summary () {
     printf "%d successes, %d failures\n" $success_total $failure_total
 }
 
-if [ "$1" == "" ]; then
+if [ "$1" == "" -o "$1" == "--help" ]; then
     echo "USAGE: ./test_compiler.sh /path/to/compiler [stages(optional)]"
     echo "EXAMPLE(test specific stages): ./test_compiler.sh ./mycompiler 1 2 4"
     echo "EXAMPLE(test all): ./test_compiler.sh ./mycompiler"
